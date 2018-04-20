@@ -1,2 +1,2 @@
-#windows
+#!/bin/sh
 oscript -encoding=utf-8 .git/hooks/v8-exchrules1s.os
