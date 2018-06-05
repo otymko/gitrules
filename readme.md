@@ -60,17 +60,33 @@ $ gitrules remove
 Параметры:
 * <Команда> - команда, по которой нужно получить справку.
 
+```
+$ gitrules help export
+```
+
 ### version - версия приложения ###
 
 Выводит версию консольного приложения.
+
+```
+$ gitrules version
+```
 
 ### install - установить hook gitrules в git проект ###
 
 Устанавливается библиотеку gitrules в проект git. Установка ведется в каталог ./.git/hooks.
 
+```
+$ gitrules install
+```
+
 ### remove - удалить hook gitrules в git проекте ###
 
 Удаляет библиотеку gitrules из проекта git. Поиск ведется в каталоге ./.git/hooks.
+
+```
+$ gitrules help remove
+```
 
 ### export - распаковка правил конвертации ###
 
