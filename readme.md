@@ -14,11 +14,11 @@
 
 * 1C: Предприятие 8.2.19 и новее
 * Git (https://git-scm.com/)
-* OneScript 1.0.11 и старше (http://oscript.io/)
+* OneScript 1.0.11 и новее (http://oscript.io/)
 * Библиотеки OneScript (https://github.com/oscript-library)
-  + cmdline 0.4.1 и старше (https://github.com/oscript-library/cmdline)
-  + 1commands 0.8 и старше (https://github.com/oscript-library/1commands)
-  + logos 0.5 и старше (https://github.com/oscript-library/logos)
+  + cmdline 0.4.1 и новее (https://github.com/oscript-library/cmdline)
+  + 1commands 0.8 и новее (https://github.com/oscript-library/1commands)
+  + logos 0.5 и новее (https://github.com/oscript-library/logos)
 
 ### Установка gitrules
 
@@ -85,7 +85,7 @@ $ gitrules install
 Удаляет библиотеку gitrules из проекта git. Поиск ведется в каталоге ./.git/hooks.
 
 ```
-$ gitrules help remove
+$ gitrules remove
 ```
 
 ### export - распаковка правил конвертации ###
