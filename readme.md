@@ -73,7 +73,7 @@ gitrules КОМАНДА --help
 
 Пример:
 ```
-$ gitrules --help export
+$ gitrules export --help
 ```
 или 
 ```
