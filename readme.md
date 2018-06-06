@@ -12,8 +12,8 @@
 
 ### Системные требования
 
-* 1C: Предприятие 8.2.19 и старше
-* git (https://git-scm.com/)
+* 1C: Предприятие 8.2.19 и новее
+* Git (https://git-scm.com/)
 * OneScript 1.0.11 и старше (http://oscript.io/)
 * Библиотеки OneScript (https://github.com/oscript-library)
   + cmdline 0.4.1 и старше (https://github.com/oscript-library/cmdline)
