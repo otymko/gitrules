@@ -9,7 +9,12 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        oscript_version: [1.3.0, night-build]
+        os: [windows-latest]
     name: oscript for win
     steps:
       - name: Последняя версия проекта
@@ -17,9 +22,8 @@ jobs:
       - name: Установка OneScript
         uses: otymko/setup-onescript@v1
         with:
-          version: 1.3.0
+          version: ${{ matrix.oscript_version }}
       - name: Загрузка зависимостей
         run: opm install -l && opm install coverage && opm install 1testrunner && opm install asserts && opm install 1bdd && opm install gitrunner
       - name: Запуск тестов
         run: oscript ./tasks/coverage.os
-
