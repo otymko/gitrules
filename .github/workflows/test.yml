@@ -1,0 +1,25 @@
+name: Test
+
+on: 
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    name: oscript for win
+    steps:
+      - name: Последняя версия проекта
+        uses: actions/checkout@v1
+      - name: Установка OneScript
+        uses: otymko/setup-onescript@v1
+        with:
+          version: 1.3.0
+      - name: Загрузка зависимостей
+        run: opm install -l && opm install coverage && opm install 1testrunner && opm install asserts && opm install 1bdd && opm install gitrunner
+      - name: Запуск тестов
+        run: oscript ./tasks/coverage.os
+
