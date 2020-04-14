@@ -20,7 +20,7 @@ jobs:
     - name: Загрузка зависимостей
       run: opm install coverage && opm install 1testrunner && opm install asserts && opm install 1bdd && opm install gitrunner
     - name: Получение покрытия кода
-      run: opm run test
+      run: opm run coverage
     - name: Установка sonarscanner
       uses: warchant/setup-sonar-scanner@v1
     - name: Анализ в SonarQube
