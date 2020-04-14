@@ -20,7 +20,7 @@ jobs:
       - name: Последняя версия проекта
         uses: actions/checkout@v1
       - name: Установка OneScript
-        uses: otymko/setup-onescript@master
+        uses: otymko/setup-onescript@v1.0
         with:
           version: ${{ matrix.oscript_version }}
       - name: Загрузка зависимостей
