@@ -1,0 +1,32 @@
+name: QA
+
+on: 
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+
+jobs:
+  QA:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.event.repository.full_name
+    steps:
+    - uses: actions/checkout@v2
+    - name: Установка OneScript
+      uses: otymko/setup-onescript@master
+      with:
+        version: 1.3.0
+    - name: Загрузка зависимостей
+      run: opm install coverage && opm install 1testrunner && opm install asserts && opm install 1bdd && opm install gitrunner
+    - name: Получение покрытия кода
+      run: opm run coverage
+    - name: Установка sonarscanner
+      uses: warchant/setup-sonar-scanner@v1
+    - name: Анализ в SonarQube
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: sonar-scanner
+          -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
+          -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}
+
