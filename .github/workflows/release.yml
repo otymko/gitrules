@@ -12,7 +12,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         oscript_version: ['1.4.0']
-        package_mask: ["*.ospx"]
+        package_mask: ["gitrules-*.ospx"]
         
     steps:
       # Загрузка проекта
